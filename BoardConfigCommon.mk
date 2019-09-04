@@ -27,6 +27,7 @@ COMMON_PATH := device/xiaomi/sdm660-common
 BOARD_VENDOR := xiaomi
 
 BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_PHONY_TARGETS := true
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := sdm660
