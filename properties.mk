@@ -116,9 +116,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.early_gl_phase_offset_ns=3000000 \
     debug.sf.early_phase_offset_ns=1500000 \
     debug.sf.enable_gl_backpressure=1 \
+    debug.sf.disable_backpressure=1 \
     debug.sf.enable_hwc_vds=1 \
     debug.sf.hw=1 \
     debug.sf.latch_unsignaled=1 \
+    debug.sdm.support_writeback=0 \
     ro.opengles.version=196610 \
     ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
     ro.surface_flinger.max_virtual_display_dimension=4096 \
@@ -129,6 +131,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.disable_skip_validate=1 \
     vendor.display.enable_default_color_mode=1 \
     vendor.gralloc.enable_fb_ubwc=1
+
+# The default sf phase offset is set to 6ms, to avoid it be included into next
+# vsync threshold, set high fps early sf and next vsync threshold phase offset
+# to 6.1ms, which is bigger than all sf phase offsets in normal frame rate.
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.sf.high_fps_early_phase_offset_ns=6100000 \
+    debug.sf.high_fps_early_gl_phase_offset_ns=9000000 \
+    debug.sf.phase_offset_threshold_for_next_vsync_ns=6100000
 
 # FRP
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -191,4 +201,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # WFD
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    persist.debug.wfd.enable=1
+    persist.debug.wfd.enable=1 \
+    persist.sys.wfd.virtual=0
