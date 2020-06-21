@@ -204,3 +204,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.debug.wfd.enable=1 \
     persist.sys.wfd.virtual=0
+
+# Optimize
+PRODUCT_PROPERTY_OVERRIDES += \
+    sys.use_fifo_ui=1
