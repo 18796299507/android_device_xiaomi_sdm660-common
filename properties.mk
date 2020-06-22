@@ -111,10 +111,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.sf.early_app_phase_offset_ns=1500000 \
-    debug.sf.early_gl_app_phase_offset_ns=15000000 \
-    debug.sf.early_gl_phase_offset_ns=3000000 \
-    debug.sf.early_phase_offset_ns=1500000 \
     debug.sf.enable_gl_backpressure=1 \
     debug.sf.disable_backpressure=1 \
     debug.sf.enable_hwc_vds=1 \
@@ -125,8 +121,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
     ro.surface_flinger.max_virtual_display_dimension=4096 \
     ro.surface_flinger.protected_contents=true \
-    ro.surface_flinger.vsync_event_phase_offset_ns=4000000 \
-    ro.surface_flinger.vsync_sf_event_phase_offset_ns=8000000 \
     ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
     ro.vendor.display.cabl=0 \
     vendor.display.disable_skip_validate=1 \
